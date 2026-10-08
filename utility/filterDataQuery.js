@@ -1,8 +1,10 @@
-export const filterData = (req, data) => {
+import { startups } from "../data/data.js";
+
+export const filterDataQuery = (req) => {
   const { continent, industry, country, is_seeking_funding, has_mvp } =
     req.query;
 
-  let filterData = data;
+  let filterData = startups;
 
   if (continent) {
     filterData = filterData.filter((company) => {
